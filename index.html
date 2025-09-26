@@ -11,89 +11,118 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6;
-            color: #1f2937;
+            background-color: #0f172a; /* Deeper background color */
+            color: #e2e8f0; /* Lighter text color for contrast */
+            background-image: radial-gradient(at 0% 100%, #1e293b, transparent 50%),
+                              radial-gradient(at 100% 0%, #1e293b, transparent 50%);
+            background-size: 100% 100%;
         }
         .container {
             max-width: 800px;
         }
+
+        /* Animation for section fade-in */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Apply animation to sections */
+        .animated-section {
+            animation: fadeIn 1s ease-in-out;
+            animation-fill-mode: forwards;
+            opacity: 0;
+        }
+
+        /* Delay for sequential sections */
+        #about { animation-delay: 0.2s; }
+        #education { animation-delay: 0.4s; }
+        #skills { animation-delay: 0.6s; }
+        #projects { animation-delay: 0.8s; }
+        footer { animation-delay: 1s; }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-slate-900 text-gray-200">
 
     <div class="container mx-auto p-4 sm:p-8">
 
         <!-- Header Section -->
-        <header class="text-center mb-12">
-            <div class="bg-white p-6 rounded-3xl shadow-lg">
-                <img src="https://placehold.co/150x150/d1d5db/4b5563?text=BR" alt="Profile picture of Biniya Rose" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover ring-4 ring-gray-200">
-                <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-2">Biniya Rose</h1>
-                <p class="text-lg text-gray-600 font-medium">Computer Science Engineering Student</p>
+        <header class="text-center mb-12 animated-section">
+            <div class="bg-slate-800 p-6 rounded-3xl shadow-lg border border-slate-700">
+                <img src="https://placehold.co/150x150/0f172a/64748b?text=BR" alt="Profile picture of Biniya Rose" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover ring-4 ring-slate-700">
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-2">Biniya Rose</h1>
+                <p class="text-lg text-gray-400 font-medium">Computer Science Engineering Student</p>
             </div>
         </header>
 
         <!-- About Section -->
-        <section id="about" class="bg-white p-6 rounded-3xl shadow-lg mb-8">
-            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">About Me</h2>
-            <p class="text-gray-700 leading-relaxed mb-4">
+        <section id="about" class="bg-slate-800 p-6 rounded-3xl shadow-lg mb-8 border border-slate-700 animated-section">
+            <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">About Me</h2>
+            <p class="text-gray-300 leading-relaxed mb-4">
                 I am Biniya Rose, a Computer Science Engineering student currently pursuing my studies at **Vidya Academy of Science and Technology**.
             </p>
-            <p class="text-gray-700 leading-relaxed">
+            <p class="text-gray-300 leading-relaxed">
                 I am from Thaikkad, near Guruvayoor, and I am passionate about technology and solving real-world problems through code. This portfolio is a space to showcase my academic journey, skills, and projects.
             </p>
         </section>
 
         <!-- Education Section -->
-        <section id="education" class="bg-white p-6 rounded-3xl shadow-lg mb-8">
-            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Education</h2>
+        <section id="education" class="bg-slate-800 p-6 rounded-3xl shadow-lg mb-8 border border-slate-700 animated-section">
+            <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">Education</h2>
             <div class="flex items-center space-x-4">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-indigo-500 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H10a2.5 2.5 0 0 1 2.5 2.5v15"/><path d="M12 19.5v-15A2.5 2.5 0 0 1 14.5 2H18a2.5 2.5 0 0 1 2.5 2.5v15"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-cyan-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H10a2.5 2.5 0 0 1 2.5 2.5v15"/><path d="M12 19.5v-15A2.5 2.5 0 0 1 14.5 2H18a2.5 2.5 0 0 1 2.5 2.5v15"/></svg>
                 <div>
-                    <h3 class="text-xl font-semibold text-gray-800">Bachelor of Technology, Computer Science Engineering</h3>
-                    <p class="text-gray-600 font-medium">Vidya Academy of Science and Technology</p>
+                    <h3 class="text-xl font-semibold text-gray-200">Bachelor of Technology, Computer Science Engineering</h3>
+                    <p class="text-gray-400 font-medium">Vidya Academy of Science and Technology</p>
                     <p class="text-sm text-gray-500">Currently Pursuing</p>
                 </div>
             </div>
         </section>
 
         <!-- Placeholder Skills Section -->
-        <section id="skills" class="bg-white p-6 rounded-3xl shadow-lg mb-8">
-            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Skills & Interests</h2>
+        <section id="skills" class="bg-slate-800 p-6 rounded-3xl shadow-lg mb-8 border border-slate-700 animated-section">
+            <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">Skills & Interests</h2>
             <div class="flex flex-wrap gap-2">
-                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">JavaScript</span>
-                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">Python</span>
-                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">Web Development</span>
-                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">Data Structures</span>
-                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">Machine Learning</span>
+                <span class="bg-cyan-600/50 text-cyan-100 px-3 py-1 rounded-full text-sm font-medium">JavaScript</span>
+                <span class="bg-fuchsia-600/50 text-fuchsia-100 px-3 py-1 rounded-full text-sm font-medium">Python</span>
+                <span class="bg-cyan-600/50 text-cyan-100 px-3 py-1 rounded-full text-sm font-medium">Web Development</span>
+                <span class="bg-fuchsia-600/50 text-fuchsia-100 px-3 py-1 rounded-full text-sm font-medium">Data Structures</span>
+                <span class="bg-cyan-600/50 text-cyan-100 px-3 py-1 rounded-full text-sm font-medium">Machine Learning</span>
             </div>
         </section>
 
         <!-- Placeholder Projects Section -->
-        <section id="projects" class="bg-white p-6 rounded-3xl shadow-lg mb-8">
-            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Projects</h2>
+        <section id="projects" class="bg-slate-800 p-6 rounded-3xl shadow-lg mb-8 border border-slate-700 animated-section">
+            <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">Projects</h2>
             <div class="grid md:grid-cols-2 gap-4">
-                <div class="bg-gray-50 p-4 rounded-2xl border border-gray-200">
-                    <h3 class="text-lg font-semibold text-gray-900">Project Title One</h3>
-                    <p class="text-sm text-gray-600">A brief description of your project and its key features.</p>
+                <div class="bg-slate-700 p-4 rounded-2xl border border-slate-600">
+                    <h3 class="text-lg font-semibold text-white">Project Title One</h3>
+                    <p class="text-sm text-gray-300">A brief description of your project and its key features.</p>
                 </div>
-                <div class="bg-gray-50 p-4 rounded-2xl border border-gray-200">
-                    <h3 class="text-lg font-semibold text-gray-900">Project Title Two</h3>
-                    <p class="text-sm text-gray-600">Another brief description of a second project you've worked on.</p>
+                <div class="bg-slate-700 p-4 rounded-2xl border border-slate-600">
+                    <h3 class="text-lg font-semibold text-white">Project Title Two</h3>
+                    <p class="text-sm text-gray-300">Another brief description of a second project you've worked on.</p>
                 </div>
             </div>
         </section>
 
         <!-- Contact/Footer Section -->
-        <footer class="text-center mt-12 mb-8 text-gray-600">
+        <footer class="text-center mt-12 mb-8 text-gray-400 animated-section">
             <p class="text-sm">Connect with me</p>
             <div class="flex justify-center space-x-4 mt-2">
-                <a href="#" class="text-gray-500 hover:text-indigo-500 transition-colors">
+                <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 11.2-11.2 11.2h-.2c-1.5 0-2.8-.2-4.2-.6 2-.1 4-.8 5.6-2.6-1.5 0-2.8-.7-3.6-1.9.5.1.9 0 1.4-.1-1.6-.3-2.9-1.3-3.7-3.2.5.1 1.2.2 1.9.2-1.6-.9-2.7-2.7-2.7-4.9s1.1-4 2.7-4.9c3 3.6 7.6 5.6 12.8 5.8-1.5-3.6 1.7-7.5 5.5-7.5 2.1 0 4 .9 5.4 2.1-1.1.2-2.1.6-3 1.2 1.2-.2 2.3-.6 3.4-1.4-1.2-1-2.8-1.7-4.6-2"/></svg>
                 </a>
-                <a href="#" class="text-gray-500 hover:text-indigo-500 transition-colors">
+                <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7H18v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7H10v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
                 </a>
-                <a href="#" class="text-gray-500 hover:text-indigo-500 transition-colors">
+                <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
                 </a>
             </div>
